@@ -1,11 +1,11 @@
+/* Fonts: Syne (display) + Inter (body) */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
-
-/* Fonts: Syne (display) + Inter (body) */
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /*
  * Design system definition.
@@ -166,6 +166,55 @@
   .font-display { font-family: var(--font-display); }
   .font-sans-body { font-family: var(--font-sans); }
 
+  .kinetic-link {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+  }
+
+  .kinetic-link::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    transform: translateX(-105%) skewX(-18deg);
+    background: linear-gradient(90deg, transparent, var(--kinetic), var(--velocity));
+    transition: transform 420ms cubic-bezier(.2,.8,.2,1);
+  }
+
+  .kinetic-link:hover::before,
+  .kinetic-link:focus-visible::before {
+    transform: translateX(0) skewX(-18deg);
+  }
+
+  .magnetic-action {
+    transition: transform 260ms cubic-bezier(.2,.8,.2,1), box-shadow 260ms ease, border-color 260ms ease;
+  }
+
+  .magnetic-action:hover,
+  .magnetic-action:focus-visible {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 18px 50px -24px var(--velocity);
+  }
+
+  .tilt-card {
+    transition: transform 320ms cubic-bezier(.2,.8,.2,1), background-color 320ms ease;
+  }
+
+  .tilt-card:hover {
+    transform: translateY(-6px) rotate(-0.8deg);
+  }
+
+  .scanline {
+    background-image: linear-gradient(90deg, transparent, oklch(from var(--velocity) l c h / 18%), transparent);
+    background-size: 220% 100%;
+    animation: scanline 5s ease-in-out infinite;
+  }
+
+  .reveal-rise {
+    animation: reveal-rise 720ms cubic-bezier(.2,.8,.2,1) both;
+  }
+
   .marquee {
     animation: marquee 40s linear infinite;
   }
@@ -174,8 +223,32 @@
     to { transform: translateX(-50%); }
   }
 
+  @keyframes scanline {
+    0%, 100% { background-position: 120% 0; }
+    50% { background-position: -120% 0; }
+  }
+
+  @keyframes reveal-rise {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
   .text-stroke {
     -webkit-text-stroke: 1px currentColor;
     color: transparent;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee,
+    .scanline,
+    .reveal-rise {
+      animation: none;
+    }
+
+    .magnetic-action:hover,
+    .magnetic-action:focus-visible,
+    .tilt-card:hover {
+      transform: none;
+    }
   }
 }

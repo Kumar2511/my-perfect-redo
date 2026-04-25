@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowDownToLine, ArrowRight, Eye, Sparkles } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 
 export const Route = createFileRoute("/")({
@@ -24,14 +24,16 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const resumeUrl = "/R_Kavipriya_Resume.pdf";
+
   return (
     <SiteLayout>
       {/* HERO */}
       <section className="relative px-6 md:px-8 pt-20 md:pt-28 pb-20">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-12 gap-8 items-end">
-            <div className="col-span-12 lg:col-span-8">
-              <div className="inline-flex items-center gap-3 px-3 py-1.5 bg-secondary border border-border mb-8">
+            <div className="col-span-12 lg:col-span-8 reveal-rise">
+              <div className="inline-flex items-center gap-3 px-3 py-1.5 bg-secondary border border-border mb-8 scanline">
                 <div className="size-2 rounded-full bg-kinetic animate-pulse" />
                 <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-foreground">
                   Available for new projects
@@ -57,17 +59,37 @@ function Index() {
               <div className="flex flex-wrap gap-4 mt-10">
                 <Link
                   to="/projects"
-                  className="group inline-flex items-center gap-3 px-7 py-4 bg-foreground text-background font-bold uppercase text-xs tracking-widest hover:bg-kinetic hover:text-accent-foreground transition-all duration-300"
+                  className="magnetic-action group inline-flex items-center gap-3 px-7 py-4 bg-foreground text-background font-bold uppercase text-xs tracking-widest hover:bg-kinetic hover:text-accent-foreground transition-all duration-300"
                 >
                   View Projects
                   <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-3 px-7 py-4 border border-border text-foreground font-bold uppercase text-xs tracking-widest hover:bg-secondary transition-all"
+                  className="magnetic-action inline-flex items-center gap-3 px-7 py-4 border border-border text-foreground font-bold uppercase text-xs tracking-widest hover:bg-secondary transition-all"
                 >
                   Hire Me
                 </Link>
+              </div>
+
+              <div className="mt-5 flex flex-wrap gap-3">
+                <a
+                  href={resumeUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="magnetic-action inline-flex items-center gap-2 px-5 py-3 bg-secondary text-foreground border border-border font-bold uppercase text-[11px] tracking-widest hover:border-velocity hover:text-velocity transition-all"
+                >
+                  <Eye size={15} />
+                  View Resume
+                </a>
+                <a
+                  href={resumeUrl}
+                  download="R_Kavipriya_Resume.pdf"
+                  className="magnetic-action inline-flex items-center gap-2 px-5 py-3 bg-velocity text-primary-foreground font-bold uppercase text-[11px] tracking-widest hover:bg-kinetic hover:text-accent-foreground transition-all"
+                >
+                  <ArrowDownToLine size={15} />
+                  Download Resume
+                </a>
               </div>
             </div>
 
@@ -167,7 +189,7 @@ function Index() {
             ].map((s) => (
               <div
                 key={s.n}
-                className="group bg-background p-8 hover:bg-surface transition-colors duration-300"
+                className="tilt-card group bg-background p-8 hover:bg-surface transition-colors duration-300"
               >
                 <div className="flex items-baseline justify-between mb-6">
                   <span className="font-mono text-xs text-velocity font-bold tracking-widest">
