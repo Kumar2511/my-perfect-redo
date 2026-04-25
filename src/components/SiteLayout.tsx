@@ -30,7 +30,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
                 <Link
                   key={n.to}
                   to={n.to}
-                  className={`text-xs font-bold tracking-widest uppercase transition-colors ${
+                  className={`kinetic-link px-2 py-1 text-xs font-bold tracking-widest uppercase transition-colors ${
                     active ? "text-velocity" : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
@@ -43,7 +43,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
           <div className="hidden md:flex items-center gap-4">
             <Link
               to="/contact"
-              className="px-5 py-2.5 bg-velocity text-primary-foreground text-[11px] font-bold uppercase tracking-widest hover:bg-kinetic hover:text-accent-foreground transition-all duration-300"
+              className="magnetic-action px-5 py-2.5 bg-velocity text-primary-foreground text-[11px] font-bold uppercase tracking-widest hover:bg-kinetic hover:text-accent-foreground transition-all duration-300"
             >
               Hire Me
             </Link>
@@ -66,7 +66,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
                   key={n.to}
                   to={n.to}
                   onClick={() => setOpen(false)}
-                  className={`text-sm font-bold tracking-widest uppercase ${
+                  className={`kinetic-link px-2 py-2 text-sm font-bold tracking-widest uppercase ${
                     pathname === n.to ? "text-velocity" : "text-muted-foreground"
                   }`}
                 >
