@@ -78,7 +78,9 @@ export function SiteLayout({ children }: { children: ReactNode }) {
         )}
       </nav>
 
-      <main>{children}</main>
+      <main key={pathname} className="kinetic-page-transition">
+        {children}
+      </main>
 
       <footer className="border-t border-border mt-24">
         <div className="max-w-7xl mx-auto px-6 md:px-8 py-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
