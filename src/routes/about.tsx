@@ -10,12 +10,12 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Kavi Priya R is an enthusiastic Digital Marketing Analyst at Why Global Services, specializing in WordPress, SEO, Social Media, and Paid Ads.",
+          "Kavi Priya R — Digital Marketing Executive at Why Global Services, specializing in SEO, Meta Ads, Google Ads, and WordPress development.",
       },
       { property: "og:title", content: "About — Kavi Priya R" },
       {
         property: "og:description",
-        content: "Get to know me and my journey as a Digital Marketing Analyst.",
+        content: "Get to know me and my journey as a Digital Marketing Executive.",
       },
     ],
   }),
@@ -46,11 +46,12 @@ function AboutPage() {
               </p>
               <p className="text-lg md:text-xl text-foreground/90 leading-relaxed">
                 I'm <span className="font-bold">Kavi Priya R</span>, an enthusiastic and
-                result-driven Digital Marketing Analyst at{" "}
+                result-driven Digital Marketing Executive at{" "}
                 <span className="text-velocity font-semibold">Why Global Services</span>,
-                based in Chennai, India. I have hands-on experience in WordPress website
-                management, SEO, Social Media Marketing, and Paid Advertising
-                (Google Ads & Meta Ads).
+                based in Chennai, India. I have hands-on experience in SEO, Meta Ads,
+                Google Ads, and WordPress website development — managing live client
+                campaigns with measurable outcomes like 90 inbound calls at
+                Rs.55.10 cost-per-call and 690,000 organic impressions.
               </p>
             </div>
 
@@ -122,8 +123,8 @@ function AboutPage() {
               <h3 className="font-display text-2xl font-bold uppercase mb-2">
                 AI-Powered Digital Marketing
               </h3>
-              <p className="text-sm text-muted-foreground">Certified at WHY TAP</p>
-              <p className="font-mono text-xs text-kinetic mt-3">Industry Certification</p>
+              <p className="text-sm text-muted-foreground">Certified at WHY Tap</p>
+              <p className="font-mono text-xs text-kinetic mt-3">2026</p>
             </div>
           </div>
         </div>

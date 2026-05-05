@@ -24,54 +24,47 @@ export const Route = createFileRoute("/projects")({
 const projects = [
   {
     no: "01",
-    title: "WordPress Website Development & Management",
+    title: "Meta Ads — Healthcare Client (Lead Generation)",
     blurb:
-      "Developed and maintained multiple WordPress websites focusing on performance, design, and usability.",
+      "End-to-end Meta Ads lead generation campaigns for a healthcare client — 90 inbound calls at Rs.55.10 cost-per-call.",
     overview: [
-      "Created and managed WordPress websites including page creation, content upload, and layout customization",
-      "Customized themes and managed plugins for improved performance",
-      "Designed banners and product images using Canva",
-      "Ensured responsive design and user-friendly structure",
-      "Implemented basic SEO practices during development",
+      "Campaign 1 — Diabetes Traffic: 87 calls, Rs.55.10 cost-per-call, Rs.4,793.75 spend, 1,29,364 impressions, 46,877 reach",
+      "Campaign 2 — Footcare Traffic: 3 calls, Rs.79.47 cost-per-call, Rs.238.42 spend, 5,623 impressions, 4,895 reach",
+      "Handled audience targeting, Canva ad creatives, budget management, and performance optimization",
     ],
-    stack: ["WordPress", "Canva", "Basic SEO"],
-    links: [
-      { label: "Mahadevan Logistics", href: "https://mahadevanlogistics.com/" },
-      { label: "Rerol Refinery", href: "https://rerolrefinery.com/" },
-      { label: "Picco Infra (Interior Design)" },
-      { label: "Welfried (Training Institute)" },
-    ],
+    stack: ["Meta Ads Manager", "Canva", "Audience Targeting"],
+    report: "https://kavipriya-portfolio-tau.vercel.app/overall_clients_kpi_new.pdf",
   },
   {
     no: "02",
-    title: "Search Engine Optimization (SEO)",
+    title: "WordPress Development — Mahadev Logistics & Rerol Refinery",
     blurb:
-      "Optimized websites to improve search engine rankings and enhance user experience.",
+      "Built and deployed two production WordPress sites — both indexed and ranking on Google Search.",
     overview: [
-      "Performed on-page SEO including keyword optimization, meta tags, and content structuring",
-      "Improved website visibility using proper SEO practices",
-      "Optimized pages for better ranking and performance",
+      "Built mahadevanlogistics.com — logistics & customs brokerage company website, fully indexed on Google",
+      "Built rerolrefinery.com — industrial fuel & oil re-refining business website, indexed with keyword-rich search snippets",
+      "Handled theme customization, plugin setup, content upload, SEO meta tags, and mobile-responsive design for both sites",
     ],
-    stack: ["WordPress", "SEO Tools", "SEOptimer"],
+    stack: ["WordPress", "On-Page SEO", "Canva"],
     links: [
-      { label: "Rerol Website", href: "https://rerolrefinery.com/" },
       { label: "Mahadevan Logistics", href: "https://mahadevanlogistics.com/" },
+      { label: "Rerol Refinery", href: "https://rerolrefinery.com/" },
     ],
   },
   {
     no: "03",
-    title: "Paid Advertising — Meta Ads & Google Ads",
+    title: "SEO — Digital Training Institute",
     blurb:
-      "Managed paid advertising campaigns to generate leads and improve conversions.",
+      "Diagnosed and improved organic search performance — 690,000 impressions, 7.3 avg. position, and a 11,000+ click opportunity gap surfaced.",
     overview: [
-      "Planned and executed Meta Ads and Google Ads campaigns",
-      "Performed audience targeting and created ad creatives using Canva",
-      "Managed campaign setup, budget, and placements",
-      "Monitored performance using metrics like CTR and conversions",
-      "Optimized campaigns for better ROI",
+      "Analyzed SEO performance: 690,000 impressions, 7.3 avg. position, 0.4% CTR, 11,000+ click gap identified",
+      "Identified key issues: low CTR, weak meta tags, no FAQ schema, limited backlinks",
+      "Improved SEO by optimizing meta titles & descriptions and implementing FAQ schema",
+      "Initiated backlink building and planned SEO-focused blog content",
+      "Organic Search: 2,514 users (48.8%), 3,387 sessions (52%), 15,101 events, 65.87% engagement rate",
+      "Top page performance: IT Training page — 2,800 views, 1,400 active users, 33.7% bounce rate",
     ],
-    stack: ["Meta Ads Manager", "Google Ads", "Canva", "Google Analytics"],
-    report: "https://kavipriya-portfolio-tau.vercel.app/overall_clients_kpi_new.pdf",
+    stack: ["Google Search Console", "GA4", "On-Page SEO", "SEOptimer"],
   },
 ];
 
