@@ -333,11 +333,26 @@ function Index() {
                 </button>
               </div>
             </div>
-            <div className="flex-1 bg-background overflow-hidden">
+            {/* Mobile: inline rendered pages. Desktop: native PDF iframe. */}
+            <div className="flex-1 bg-background overflow-y-auto overscroll-contain">
+              <div className="md:hidden flex flex-col items-center gap-3 p-3">
+                {["/resume-pages/page-1.jpg", "/resume-pages/page-2.jpg"].map((src, i) => (
+                  <img
+                    key={src}
+                    src={src}
+                    alt={`Resume page ${i + 1}`}
+                    loading={i === 0 ? "eager" : "lazy"}
+                    className="w-full h-auto border border-border shadow-lg bg-white"
+                  />
+                ))}
+                <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground py-3">
+                  — End of Resume —
+                </p>
+              </div>
               <iframe
                 src={`${resumeUrl}#view=FitH`}
                 title="Kavi Priya R Resume"
-                className="w-full h-full"
+                className="hidden md:block w-full h-full"
               />
             </div>
 
