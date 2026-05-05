@@ -9,7 +9,7 @@ export const Route = createFileRoute("/experience")({
       {
         name: "description",
         content:
-          "Professional journey of Kavi Priya R — Digital Marketing Analyst at Why Global Services, previously at Foxconn Hon Hai Technology.",
+          "Professional journey of Kavi Priya R — Digital Marketing Executive at Why Global Services, with proven results in Meta Ads, SEO, and WordPress.",
       },
       { property: "og:title", content: "Experience — Kavi Priya R" },
       {
@@ -22,31 +22,18 @@ export const Route = createFileRoute("/experience")({
 
 const jobs = [
   {
-    role: "Digital Marketing Analyst",
+    role: "Digital Marketing Executive",
     company: "Why Global Services",
-    period: "Nov 2025 — Present",
+    period: "2025 — Current",
     status: "Current",
     bullets: [
-      "Managing WordPress websites including page creation, content updates, and layout customization",
-      "Planning, creating, and running paid ad campaigns on Google Ads and Meta Ads (Facebook & Instagram) for lead generation and brand awareness",
-      "Handling SEO optimization including on-page SEO, keyword usage, and content improvements",
-      "Planning and executing social media content strategies for platforms like Instagram and Facebook",
-      "Designing posts and ad creatives using Canva",
-      "Managing content calendars and scheduling posts",
-      "Monitoring ad and campaign performance using metrics like CTR, engagement, and conversions",
-      "Optimizing campaigns based on performance data to improve results",
-      "Supporting lead generation activities through digital marketing strategies",
-    ],
-  },
-  {
-    role: "Production Associate",
-    company: "Foxconn Hon Hai Technology",
-    period: "2023 — Oct 2025",
-    status: "Previous",
-    bullets: [
-      "Worked in high-precision electronics manufacturing operations",
-      "Built strong attention-to-detail, process discipline, and team collaboration",
-      "Adapted quickly to fast-paced environments with strict quality standards",
+      "Ran Meta Ads campaigns for a healthcare client generating 90 calls at Rs.55.10 cost-per-call, 1,29,364 impressions, and 46,877 reach",
+      "Executed SEO strategy for a digital training institute achieving 690,000 impressions, avg. position 7.3, 2,440 clicks, and 65.87% organic session engagement rate",
+      "Identified 11,000+ click opportunity gap (current CTR 0.4%) and recommended meta title and snippet optimizations to target 2%+ CTR",
+      "Built and deployed mahadevanlogistics.com and rerolrefinery.com on WordPress — both indexed and ranking on Google Search",
+      "Handled SEO optimization including on-page SEO, keyword usage, and content improvements",
+      "Managed keyword clusters across brand, commercial, and informational intent; drove Organic Search to 48.8% of total users (2,514 users) and 52% of total sessions",
+      "Created ad creatives using Canva, managed social media content calendars, and delivered weekly KPI reports tracking CTR, CPC, CPL, and conversions",
     ],
   },
 ];

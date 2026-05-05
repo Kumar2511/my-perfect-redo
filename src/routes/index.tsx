@@ -7,13 +7,13 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Kavi Priya R — Digital Marketing Analyst" },
+      { title: "Kavi Priya R — Digital Marketing Executive" },
       {
         name: "description",
         content:
-          "Result-driven Digital Marketing Analyst specialized in WordPress, SEO, Social Media Marketing, and Paid Advertising. Based in Chennai, India.",
+          "Digital Marketing Executive with hands-on experience in SEO, Meta Ads, Google Ads, and WordPress. 90 calls @ Rs.55.10 CPC, 690K organic impressions. Based in Chennai, India.",
       },
-      { property: "og:title", content: "Kavi Priya R — Digital Marketing Analyst" },
+      { property: "og:title", content: "Kavi Priya R — Digital Marketing Executive" },
       {
         property: "og:description",
         content:
@@ -48,12 +48,13 @@ function Index() {
                 <span className="text-velocity">R.</span>
               </h1>
               <p className="mt-6 text-xl md:text-2xl font-display font-semibold text-foreground/90">
-                Digital Marketing Analyst
+                Digital Marketing Executive
               </p>
               <p className="max-w-[55ch] text-base md:text-lg text-muted-foreground font-light leading-relaxed mt-6">
-                Enthusiastic and result-driven analyst with hands-on experience in
-                WordPress, SEO, Social Media Marketing, and Paid Advertising — actively
-                applying digital strategies through real-time projects.
+                Hands-on with SEO, Meta Ads, Google Ads, and WordPress. Managed live
+                client campaigns delivering 90 inbound calls at Rs.55.10 cost-per-call,
+                690,000 organic impressions at avg. position 7.3, and deployed two
+                fully indexed WordPress websites.
               </p>
 
               <div className="flex flex-wrap gap-4 mt-10">
@@ -112,7 +113,7 @@ function Index() {
                     Why Global Services
                   </div>
                   <div className="text-xs text-muted-foreground mt-1 uppercase tracking-widest">
-                    Digital Marketing Analyst
+                    Digital Marketing Executive
                   </div>
                 </div>
                 <div>

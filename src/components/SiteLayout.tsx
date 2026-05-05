@@ -89,7 +89,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
               Kavi<span className="text-velocity">Priya</span> R
             </div>
             <p className="text-muted-foreground max-w-xs">
-              Digital Marketing Analyst — turning data into measurable growth.
+              Digital Marketing Executive — turning data into measurable growth.
             </p>
           </div>
           <div>
