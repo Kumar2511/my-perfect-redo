@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
-import { ArrowDownToLine, ArrowRight, Eye, Sparkles } from "lucide-react";
+import { ArrowDownToLine, ArrowRight, Eye, Sparkles, X } from "lucide-react";
+import { useEffect, useState } from "react";
 import { SiteLayout } from "@/components/SiteLayout";
 
 export const Route = createFileRoute("/")({
@@ -25,6 +26,18 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const resumeUrl = "/R_Kavipriya_Resume.pdf";
+  const [resumeOpen, setResumeOpen] = useState(false);
+
+  useEffect(() => {
+    if (!resumeOpen) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setResumeOpen(false);
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [resumeOpen]);
 
   return (
     <SiteLayout>
@@ -74,15 +87,14 @@ function Index() {
               </div>
 
               <div className="mt-5 flex flex-wrap gap-3">
-                <a
-                  href={resumeUrl}
-                  target="_blank"
-                  rel="noreferrer"
+                <button
+                  type="button"
+                  onClick={() => setResumeOpen(true)}
                   className="magnetic-action inline-flex items-center gap-2 px-5 py-3 bg-secondary text-foreground border border-border font-bold uppercase text-[11px] tracking-widest hover:border-velocity hover:text-velocity transition-all"
                 >
                   <Eye size={15} />
                   View Resume
-                </a>
+                </button>
                 <a
                   href={resumeUrl}
                   download="R_Kavipriya_Resume.pdf"
@@ -238,6 +250,65 @@ function Index() {
           </div>
         </div>
       </section>
+
+      {resumeOpen && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 bg-background/85 backdrop-blur-md reveal-rise"
+          onClick={() => setResumeOpen(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Resume preview"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="relative w-full max-w-5xl h-[90vh] bg-surface border border-border shadow-2xl flex flex-col"
+          >
+            <div className="flex items-center justify-between px-5 py-3 border-b border-border bg-background">
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-velocity">
+                  / Resume Preview
+                </p>
+                <p className="font-display font-extrabold text-base uppercase tracking-tight">
+                  Kavi Priya R
+                </p>
+              </div>
+              <div className="flex items-center gap-2">
+                <a
+                  href={resumeUrl}
+                  download="R_Kavipriya_Resume.pdf"
+                  className="magnetic-action hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-velocity text-primary-foreground font-bold uppercase text-[10px] tracking-widest hover:bg-kinetic hover:text-accent-foreground transition-all"
+                >
+                  <ArrowDownToLine size={13} />
+                  Download
+                </a>
+                <a
+                  href={resumeUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hidden sm:inline-flex items-center gap-2 px-4 py-2 border border-border text-foreground font-bold uppercase text-[10px] tracking-widest hover:bg-secondary transition-all"
+                >
+                  Open in tab
+                </a>
+                <button
+                  type="button"
+                  onClick={() => setResumeOpen(false)}
+                  aria-label="Close resume preview"
+                  className="p-2 border border-border hover:border-velocity hover:text-velocity transition-colors"
+                >
+                  <X size={16} />
+                </button>
+              </div>
+            </div>
+            <div className="flex-1 bg-background overflow-hidden">
+              <iframe
+                src={`${resumeUrl}#view=FitH`}
+                title="Kavi Priya R Resume"
+                className="w-full h-full"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </SiteLayout>
   );
 }
