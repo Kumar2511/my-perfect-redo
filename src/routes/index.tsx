@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
-import { ArrowDownToLine, ArrowRight, Eye, Sparkles } from "lucide-react";
+import { ArrowDownToLine, ArrowRight, Eye, Sparkles, X } from "lucide-react";
+import { useEffect, useState } from "react";
 import { SiteLayout } from "@/components/SiteLayout";
 
 export const Route = createFileRoute("/")({
@@ -25,6 +26,18 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const resumeUrl = "/R_Kavipriya_Resume.pdf";
+  const [resumeOpen, setResumeOpen] = useState(false);
+
+  useEffect(() => {
+    if (!resumeOpen) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setResumeOpen(false);
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [resumeOpen]);
 
   return (
     <SiteLayout>
@@ -74,15 +87,14 @@ function Index() {
               </div>
 
               <div className="mt-5 flex flex-wrap gap-3">
-                <a
-                  href={resumeUrl}
-                  target="_blank"
-                  rel="noreferrer"
+                <button
+                  type="button"
+                  onClick={() => setResumeOpen(true)}
                   className="magnetic-action inline-flex items-center gap-2 px-5 py-3 bg-secondary text-foreground border border-border font-bold uppercase text-[11px] tracking-widest hover:border-velocity hover:text-velocity transition-all"
                 >
                   <Eye size={15} />
                   View Resume
-                </a>
+                </button>
                 <a
                   href={resumeUrl}
                   download="R_Kavipriya_Resume.pdf"
