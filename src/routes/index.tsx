@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
-import { ArrowDownToLine, ArrowRight, Eye, Sparkles, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { ArrowDownToLine, ArrowRight, ExternalLink, Eye, Sparkles, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import { SiteLayout } from "@/components/SiteLayout";
 
 export const Route = createFileRoute("/")({
@@ -27,6 +27,8 @@ export const Route = createFileRoute("/")({
 function Index() {
   const resumeUrl = "/R_Kavipriya_Resume.pdf";
   const [resumeOpen, setResumeOpen] = useState(false);
+  const [dragY, setDragY] = useState(0);
+  const touchStartY = useRef<number | null>(null);
 
   useEffect(() => {
     if (!resumeOpen) return;
@@ -38,6 +40,11 @@ function Index() {
       window.removeEventListener("keydown", onKey);
     };
   }, [resumeOpen]);
+
+  const closeModal = () => {
+    setDragY(0);
+    setResumeOpen(false);
+  };
 
   return (
     <SiteLayout>
@@ -253,26 +260,53 @@ function Index() {
 
       {resumeOpen && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 bg-background/85 backdrop-blur-md reveal-rise"
-          onClick={() => setResumeOpen(false)}
+          className="fixed inset-0 z-[100] flex items-stretch md:items-center justify-center md:p-8 bg-background/90 md:bg-background/85 backdrop-blur-md reveal-rise"
+          onClick={closeModal}
           role="dialog"
           aria-modal="true"
           aria-label="Resume preview"
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-5xl h-[90vh] bg-surface border border-border shadow-2xl flex flex-col"
+            style={{
+              transform: dragY ? `translateY(${dragY}px)` : undefined,
+              transition: touchStartY.current === null ? "transform 280ms cubic-bezier(.16,1,.3,1)" : "none",
+            }}
+            className="relative w-full md:max-w-5xl h-[100dvh] md:h-[90vh] bg-surface border-0 md:border border-border shadow-2xl flex flex-col"
           >
-            <div className="flex items-center justify-between px-5 py-3 border-b border-border bg-background">
-              <div>
-                <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-velocity">
+            {/* Drag handle (mobile) */}
+            <div
+              className="md:hidden flex flex-col items-center pt-2 pb-1 bg-background border-b border-border touch-none select-none"
+              onTouchStart={(e) => {
+                touchStartY.current = e.touches[0].clientY;
+              }}
+              onTouchMove={(e) => {
+                if (touchStartY.current === null) return;
+                const delta = e.touches[0].clientY - touchStartY.current;
+                if (delta > 0) setDragY(delta);
+              }}
+              onTouchEnd={() => {
+                if (dragY > 110) closeModal();
+                else setDragY(0);
+                touchStartY.current = null;
+              }}
+            >
+              <span className="block w-12 h-1.5 rounded-full bg-muted-foreground/40" aria-hidden />
+              <span className="mt-1 text-[9px] font-bold uppercase tracking-[0.25em] text-muted-foreground">
+                Swipe down to close
+              </span>
+            </div>
+
+            <div className="flex items-center justify-between px-4 md:px-5 py-3 border-b border-border bg-background">
+              <div className="min-w-0">
+                <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-velocity truncate">
                   / Resume Preview
                 </p>
-                <p className="font-display font-extrabold text-base uppercase tracking-tight">
+                <p className="font-display font-extrabold text-sm md:text-base uppercase tracking-tight truncate">
                   Kavi Priya R
                 </p>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 shrink-0">
                 <a
                   href={resumeUrl}
                   download="R_Kavipriya_Resume.pdf"
@@ -291,11 +325,11 @@ function Index() {
                 </a>
                 <button
                   type="button"
-                  onClick={() => setResumeOpen(false)}
+                  onClick={closeModal}
                   aria-label="Close resume preview"
-                  className="p-2 border border-border hover:border-velocity hover:text-velocity transition-colors"
+                  className="p-2.5 md:p-2 border border-border hover:border-velocity hover:text-velocity transition-colors active:bg-secondary"
                 >
-                  <X size={16} />
+                  <X size={18} />
                 </button>
               </div>
             </div>
@@ -305,6 +339,30 @@ function Index() {
                 title="Kavi Priya R Resume"
                 className="w-full h-full"
               />
+            </div>
+
+            {/* Mobile sticky action bar */}
+            <div
+              className="sm:hidden grid grid-cols-2 gap-px bg-border border-t border-border"
+              style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
+            >
+              <a
+                href={resumeUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center justify-center gap-2 py-4 bg-background text-foreground font-bold uppercase text-[11px] tracking-widest active:bg-secondary"
+              >
+                <ExternalLink size={14} />
+                Open
+              </a>
+              <a
+                href={resumeUrl}
+                download="R_Kavipriya_Resume.pdf"
+                className="flex items-center justify-center gap-2 py-4 bg-velocity text-primary-foreground font-bold uppercase text-[11px] tracking-widest active:bg-kinetic active:text-accent-foreground"
+              >
+                <ArrowDownToLine size={14} />
+                Download
+              </a>
             </div>
           </div>
         </div>
