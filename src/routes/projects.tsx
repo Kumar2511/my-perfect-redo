@@ -33,7 +33,6 @@ const projects = [
       "Handled audience targeting, Canva ad creatives, budget management, and performance optimization",
     ],
     stack: ["Meta Ads Manager", "Canva", "Audience Targeting"],
-    report: "/ads-report.jpg",
     reportImage: "/ads-report.jpg",
   },
   {
