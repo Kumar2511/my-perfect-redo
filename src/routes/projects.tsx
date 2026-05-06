@@ -72,30 +72,30 @@ const projects = [
 function ProjectsPage() {
   return (
     <SiteLayout>
-      <section className="px-6 md:px-8 pt-20 md:pt-28 pb-16 border-b border-border">
+      <section className="px-4 sm:px-6 md:px-8 pt-16 sm:pt-20 md:pt-28 pb-12 sm:pb-16 border-b border-border">
         <div className="max-w-7xl mx-auto">
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-velocity mb-6">
             / Projects
           </p>
-          <h1 className="font-display font-extrabold text-[clamp(3rem,8vw,7rem)] leading-[0.9] tracking-tighter uppercase italic">
+          <h1 className="font-display font-extrabold text-[clamp(2.25rem,8vw,7rem)] leading-[0.9] tracking-tighter uppercase italic break-words">
             Real-world <span className="text-kinetic">work,</span><br />
             measurable results.
           </h1>
-          <p className="mt-8 max-w-2xl text-muted-foreground text-lg">
+          <p className="mt-6 sm:mt-8 max-w-2xl text-muted-foreground text-base sm:text-lg">
             A selection of projects showcasing my digital marketing expertise across
             web, search, and paid channels.
           </p>
         </div>
       </section>
 
-      <section className="px-6 md:px-8 py-16">
+      <section className="px-4 sm:px-6 md:px-8 py-12 sm:py-16">
         <div className="max-w-7xl mx-auto space-y-px">
           {projects.map((p) => (
             <article
               key={p.no}
-              className="group bg-surface hover:bg-secondary transition-colors duration-300 p-8 md:p-12 border border-border"
+              className="group bg-surface hover:bg-secondary transition-colors duration-300 p-5 sm:p-8 md:p-12 border border-border"
             >
-              <div className="grid grid-cols-12 gap-8">
+              <div className="grid grid-cols-12 gap-6 md:gap-8">
                 <div className="col-span-12 md:col-span-3">
                   <p className="font-mono text-xs text-velocity tracking-widest mb-4">
                     {p.no} / Case Study
@@ -113,14 +113,14 @@ function ProjectsPage() {
                 </div>
 
                 <div className="col-span-12 md:col-span-9">
-                  <h2 className="font-display text-3xl md:text-5xl font-extrabold uppercase leading-[0.95] tracking-tight mb-4">
+                  <h2 className="font-display text-2xl sm:text-3xl md:text-5xl font-extrabold uppercase leading-[0.95] tracking-tight mb-4 break-words">
                     {p.title}
                   </h2>
-                  <p className="text-foreground/80 text-base md:text-lg max-w-3xl leading-relaxed">
+                  <p className="text-foreground/80 text-sm sm:text-base md:text-lg max-w-3xl leading-relaxed">
                     {p.blurb}
                   </p>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 mt-8 md:mt-10">
                     <div>
                       <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-4">
                         Project Overview
@@ -149,7 +149,7 @@ function ProjectsPage() {
                                     href={l.href}
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="group/link inline-flex items-center gap-2 text-foreground hover:text-kinetic transition-colors font-semibold"
+                                    className="group/link inline-flex items-center gap-2 text-foreground hover:text-kinetic transition-colors font-semibold break-all"
                                   >
                                     {l.label}
                                     <ExternalLink size={14} className="group-hover/link:translate-x-0.5 transition-transform" />
@@ -165,16 +165,33 @@ function ProjectsPage() {
                         </>
                       )}
 
-                      {p.report && (
-                        <a
-                          href={p.report}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="inline-flex items-center gap-3 px-5 py-3 bg-kinetic text-accent-foreground font-bold uppercase text-xs tracking-widest hover:bg-velocity hover:text-primary-foreground transition-all"
-                        >
-                          <FileText size={14} />
-                          View Ads Report (PDF)
-                        </a>
+                      {p.reportImage && (
+                        <div className="space-y-3">
+                          <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground flex items-center gap-2">
+                            <ImageIcon size={12} /> Ads Report
+                          </p>
+                          <a
+                            href={p.reportImage}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="block group/img overflow-hidden border border-border bg-background"
+                          >
+                            <img
+                              src={p.reportImage}
+                              alt="Meta Ads campaign KPI report — Diabetes & Footcare traffic"
+                              loading="lazy"
+                              className="w-full h-auto block transition-transform duration-500 group-hover/img:scale-[1.02]"
+                            />
+                          </a>
+                          <a
+                            href={p.reportImage}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-velocity hover:text-kinetic transition-colors"
+                          >
+                            <FileText size={12} /> Open full image
+                          </a>
+                        </div>
                       )}
                     </div>
                   </div>
