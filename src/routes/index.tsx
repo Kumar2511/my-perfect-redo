@@ -49,7 +49,7 @@ function Index() {
   return (
     <SiteLayout>
       {/* HERO */}
-      <section className="relative px-6 md:px-8 pt-20 md:pt-28 pb-20">
+      <section className="relative px-4 sm:px-6 md:px-8 pt-14 sm:pt-20 md:pt-28 pb-16 sm:pb-20">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-12 gap-8 items-end">
             <div className="col-span-12 lg:col-span-8 reveal-rise">
@@ -63,41 +63,41 @@ function Index() {
               <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
                 Hello, I'm
               </p>
-              <h1 className="font-display font-extrabold text-[clamp(3.25rem,10vw,8.5rem)] leading-[0.85] tracking-tighter uppercase italic">
+              <h1 className="font-display font-extrabold text-[clamp(2.75rem,10vw,8.5rem)] leading-[0.85] tracking-tighter uppercase italic break-words">
                 Kavi Priya<br />
                 <span className="text-velocity">R.</span>
               </h1>
-              <p className="mt-6 text-xl md:text-2xl font-display font-semibold text-foreground/90">
+              <p className="mt-5 sm:mt-6 text-lg sm:text-xl md:text-2xl font-display font-semibold text-foreground/90">
                 Digital Marketing Executive
               </p>
-              <p className="max-w-[55ch] text-base md:text-lg text-muted-foreground font-light leading-relaxed mt-6">
+              <p className="max-w-[55ch] text-sm sm:text-base md:text-lg text-muted-foreground font-light leading-relaxed mt-5 sm:mt-6">
                 Hands-on with SEO, Meta Ads, Google Ads, and WordPress. Managed live
                 client campaigns delivering 90 inbound calls at Rs.55.10 cost-per-call,
                 690,000 organic impressions at avg. position 7.3, and deployed two
                 fully indexed WordPress websites.
               </p>
 
-              <div className="flex flex-wrap gap-4 mt-10">
+              <div className="flex flex-wrap gap-3 sm:gap-4 mt-8 sm:mt-10">
                 <Link
                   to="/projects"
-                  className="magnetic-action group inline-flex items-center gap-3 px-7 py-4 bg-foreground text-background font-bold uppercase text-xs tracking-widest hover:bg-kinetic hover:text-accent-foreground transition-all duration-300"
+                  className="magnetic-action group inline-flex items-center gap-3 px-6 sm:px-7 py-3.5 sm:py-4 min-h-12 bg-foreground text-background font-bold uppercase text-xs tracking-widest hover:bg-kinetic hover:text-accent-foreground transition-all duration-300"
                 >
                   View Projects
                   <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   to="/contact"
-                  className="magnetic-action inline-flex items-center gap-3 px-7 py-4 border border-border text-foreground font-bold uppercase text-xs tracking-widest hover:bg-secondary transition-all"
+                  className="magnetic-action inline-flex items-center gap-3 px-6 sm:px-7 py-3.5 sm:py-4 min-h-12 border border-border text-foreground font-bold uppercase text-xs tracking-widest hover:bg-secondary transition-all"
                 >
                   Hire Me
                 </Link>
               </div>
 
-              <div className="mt-5 flex flex-wrap gap-3">
+              <div className="mt-4 sm:mt-5 flex flex-wrap gap-3">
                 <button
                   type="button"
                   onClick={() => setResumeOpen(true)}
-                  className="magnetic-action inline-flex items-center gap-2 px-5 py-3 bg-secondary text-foreground border border-border font-bold uppercase text-[11px] tracking-widest hover:border-velocity hover:text-velocity transition-all"
+                  className="magnetic-action inline-flex items-center gap-2 px-5 py-3 min-h-11 bg-secondary text-foreground border border-border font-bold uppercase text-[11px] tracking-widest hover:border-velocity hover:text-velocity transition-all"
                 >
                   <Eye size={15} />
                   View Resume
@@ -105,7 +105,7 @@ function Index() {
                 <a
                   href={resumeUrl}
                   download="R_Kavipriya_Resume.pdf"
-                  className="magnetic-action inline-flex items-center gap-2 px-5 py-3 bg-velocity text-primary-foreground font-bold uppercase text-[11px] tracking-widest hover:bg-kinetic hover:text-accent-foreground transition-all"
+                  className="magnetic-action inline-flex items-center gap-2 px-5 py-3 min-h-11 bg-velocity text-primary-foreground font-bold uppercase text-[11px] tracking-widest hover:bg-kinetic hover:text-accent-foreground transition-all"
                 >
                   <ArrowDownToLine size={15} />
                   Download Resume
@@ -154,10 +154,10 @@ function Index() {
       </section>
 
       {/* MARQUEE STRIP */}
-      <div className="border-y border-border py-6 overflow-hidden bg-surface">
+      <div className="border-y border-border py-4 sm:py-6 overflow-hidden bg-surface">
         <div className="flex marquee whitespace-nowrap">
           {Array.from({ length: 2 }).map((_, i) => (
-            <div key={i} className="flex items-center gap-12 px-6 shrink-0">
+            <div key={i} className="flex items-center gap-8 sm:gap-12 px-4 sm:px-6 shrink-0">
               {[
                 "WordPress Development",
                 "SEO Optimization",
@@ -168,11 +168,11 @@ function Index() {
                 "Content Creation",
                 "Analytics",
               ].map((t) => (
-                <span key={t} className="flex items-center gap-12">
-                  <span className="font-display text-2xl md:text-3xl font-bold uppercase italic text-foreground">
+                <span key={t} className="flex items-center gap-8 sm:gap-12">
+                  <span className="font-display text-xl sm:text-2xl md:text-3xl font-bold uppercase italic text-foreground">
                     {t}
                   </span>
-                  <span className="text-velocity font-display text-2xl">/</span>
+                  <span className="text-velocity font-display text-xl sm:text-2xl">/</span>
                 </span>
               ))}
             </div>
@@ -181,18 +181,18 @@ function Index() {
       </div>
 
       {/* SERVICES */}
-      <section className="px-6 md:px-8 py-24">
+      <section className="px-4 sm:px-6 md:px-8 py-16 sm:py-24">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between gap-8 mb-16">
+          <div className="flex flex-col md:flex-row justify-between gap-6 sm:gap-8 mb-12 sm:mb-16">
             <div>
               <p className="font-mono text-xs uppercase tracking-[0.3em] text-velocity mb-4 flex items-center gap-2">
                 <Sparkles size={14} /> What I Do
               </p>
-              <h2 className="font-display font-extrabold text-5xl md:text-7xl leading-[0.9] tracking-tighter uppercase max-w-[14ch]">
+              <h2 className="font-display font-extrabold text-4xl sm:text-5xl md:text-7xl leading-[0.9] tracking-tighter uppercase max-w-[14ch] break-words">
                 Driving digital <span className="text-velocity">growth</span> that matters
               </h2>
             </div>
-            <p className="md:max-w-sm text-muted-foreground text-base leading-relaxed self-end">
+            <p className="md:max-w-sm text-muted-foreground text-sm sm:text-base leading-relaxed md:self-end">
               I combine creativity with data to help businesses reach their target
               audience and grow online — across web, search, social, and paid channels.
             </p>
@@ -209,7 +209,7 @@ function Index() {
             ].map((s) => (
               <div
                 key={s.n}
-                className="tilt-card group bg-background p-8 hover:bg-surface transition-colors duration-300"
+                className="tilt-card group bg-background p-6 sm:p-8 hover:bg-surface transition-colors duration-300"
               >
                 <div className="flex items-baseline justify-between mb-6">
                   <span className="font-mono text-xs text-velocity font-bold tracking-widest">
@@ -220,7 +220,7 @@ function Index() {
                     className="text-muted-foreground group-hover:text-kinetic group-hover:translate-x-1 transition-all"
                   />
                 </div>
-                <h3 className="font-display text-2xl font-bold uppercase tracking-tight mb-3">
+                <h3 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight mb-3">
                   {s.t}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{s.d}</p>
@@ -231,17 +231,17 @@ function Index() {
       </section>
 
       {/* CTA BAND */}
-      <section className="px-6 md:px-8 py-24 border-t border-border">
-        <div className="max-w-7xl mx-auto grid grid-cols-12 gap-8 items-center">
+      <section className="px-4 sm:px-6 md:px-8 py-16 sm:py-24 border-t border-border">
+        <div className="max-w-7xl mx-auto grid grid-cols-12 gap-6 sm:gap-8 items-center">
           <div className="col-span-12 lg:col-span-8">
-            <h2 className="font-display font-extrabold text-5xl md:text-7xl leading-[0.9] tracking-tighter uppercase">
+            <h2 className="font-display font-extrabold text-4xl sm:text-5xl md:text-7xl leading-[0.9] tracking-tighter uppercase break-words">
               Let's build your <span className="italic text-kinetic">next</span> growth story.
             </h2>
           </div>
-          <div className="col-span-12 lg:col-span-4 flex flex-col gap-4">
+          <div className="col-span-12 lg:col-span-4 flex flex-col gap-3 sm:gap-4">
             <Link
               to="/contact"
-              className="group flex items-center justify-between gap-4 px-7 py-5 bg-velocity text-primary-foreground font-bold uppercase text-sm tracking-widest hover:bg-kinetic hover:text-accent-foreground transition-all duration-300"
+              className="group flex items-center justify-between gap-4 px-6 sm:px-7 py-4 sm:py-5 min-h-12 bg-velocity text-primary-foreground font-bold uppercase text-xs sm:text-sm tracking-widest hover:bg-kinetic hover:text-accent-foreground transition-all duration-300"
             >
               Start a project
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -250,7 +250,7 @@ function Index() {
               href="https://wa.me/919042551631"
               target="_blank"
               rel="noreferrer"
-              className="px-7 py-5 border border-border text-foreground font-bold uppercase text-sm tracking-widest text-center hover:bg-secondary transition-all"
+              className="px-6 sm:px-7 py-4 sm:py-5 min-h-12 border border-border text-foreground font-bold uppercase text-xs sm:text-sm tracking-widest text-center hover:bg-secondary transition-all"
             >
               Chat on WhatsApp
             </a>
