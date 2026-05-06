@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
-import { ExternalLink, FileText } from "lucide-react";
-import adsReport from "/ads-report.jpg?url";
+import { ExternalLink, FileText, ImageIcon } from "lucide-react";
 
 export const Route = createFileRoute("/projects")({
   component: ProjectsPage,
