@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { ExternalLink, FileText } from "lucide-react";
+import adsReport from "/ads-report.jpg?url";
 
 export const Route = createFileRoute("/projects")({
   component: ProjectsPage,
@@ -33,7 +34,8 @@ const projects = [
       "Handled audience targeting, Canva ad creatives, budget management, and performance optimization",
     ],
     stack: ["Meta Ads Manager", "Canva", "Audience Targeting"],
-    report: "https://kavipriya-portfolio-tau.vercel.app/overall_clients_kpi_new.pdf",
+    report: "/ads-report.jpg",
+    reportImage: "/ads-report.jpg",
   },
   {
     no: "02",
