@@ -89,24 +89,24 @@ function Bar({ level, accent }: { level: number; accent: "velocity" | "kinetic" 
 function SkillsPage() {
   return (
     <SiteLayout>
-      <section className="px-6 md:px-8 pt-20 md:pt-28 pb-16 border-b border-border">
+      <section className="px-4 sm:px-6 md:px-8 pt-16 sm:pt-20 md:pt-28 pb-12 sm:pb-16 border-b border-border">
         <div className="max-w-7xl mx-auto">
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-velocity mb-6">
             / Skills
           </p>
-          <h1 className="font-display font-extrabold text-[clamp(3rem,8vw,7rem)] leading-[0.9] tracking-tighter uppercase italic">
+          <h1 className="font-display font-extrabold text-[clamp(2.25rem,8vw,7rem)] leading-[0.9] tracking-tighter uppercase italic break-words">
             Tools, tactics &<br />
             <span className="text-kinetic">technologies.</span>
           </h1>
         </div>
       </section>
 
-      <section className="px-6 md:px-8 py-20">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-16">
+      <section className="px-4 sm:px-6 md:px-8 py-14 sm:py-20">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-10 lg:gap-x-16 gap-y-12 sm:gap-y-16">
           {groups.map((g) => (
             <div key={g.title}>
-              <div className="flex items-baseline justify-between mb-8 pb-4 border-b border-border">
-                <h2 className="font-display text-2xl md:text-3xl font-extrabold uppercase tracking-tight">
+              <div className="flex items-baseline justify-between gap-3 mb-6 sm:mb-8 pb-3 sm:pb-4 border-b border-border">
+                <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-extrabold uppercase tracking-tight break-words">
                   {g.title}
                 </h2>
                 <span className="font-mono text-xs text-muted-foreground">
@@ -133,17 +133,17 @@ function SkillsPage() {
         </div>
       </section>
 
-      <section className="px-6 md:px-8 py-20 border-t border-border bg-surface">
+      <section className="px-4 sm:px-6 md:px-8 py-14 sm:py-20 border-t border-border bg-surface">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-baseline justify-between mb-12">
-            <h2 className="font-display text-3xl md:text-5xl font-extrabold uppercase tracking-tight">
+          <div className="flex items-baseline justify-between gap-3 mb-10 sm:mb-12">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-5xl font-extrabold uppercase tracking-tight break-words">
               Soft <span className="text-kinetic italic">skills.</span>
             </h2>
             <span className="font-mono text-xs text-muted-foreground hidden md:inline">
               How I work
             </span>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 lg:gap-x-10 gap-y-6 sm:gap-y-8">
             {softSkills.map((s) => (
               <div key={s.name}>
                 <div className="flex justify-between items-baseline mb-2">
