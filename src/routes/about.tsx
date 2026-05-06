@@ -37,14 +37,14 @@ function AboutPage() {
     <SiteLayout>
       <PageHeader eyebrow="About" title="Get to know me & my journey" />
 
-      <section className="px-6 md:px-8 py-20">
-        <div className="max-w-7xl mx-auto grid grid-cols-12 gap-10">
+      <section className="px-4 sm:px-6 md:px-8 py-14 sm:py-20">
+        <div className="max-w-7xl mx-auto grid grid-cols-12 gap-8 md:gap-10">
           <div className="col-span-12 lg:col-span-7 space-y-12">
             <div>
               <p className="font-mono text-xs uppercase tracking-[0.3em] text-velocity mb-4">
                 Professional Summary
               </p>
-              <p className="text-lg md:text-xl text-foreground/90 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-foreground/90 leading-relaxed">
                 I'm <span className="font-bold">Kavi Priya R</span>, an enthusiastic and
                 result-driven Digital Marketing Executive at{" "}
                 <span className="text-velocity font-semibold">Why Global Services</span>,
@@ -59,7 +59,7 @@ function AboutPage() {
               <p className="font-mono text-xs uppercase tracking-[0.3em] text-velocity mb-4">
                 My Passion
               </p>
-              <p className="text-lg md:text-xl text-foreground/90 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-foreground/90 leading-relaxed">
                 I'm passionate about combining creativity with data-driven marketing.
                 I love turning marketing strategies into measurable results that help
                 businesses grow their online presence.
@@ -92,12 +92,12 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="px-6 md:px-8 py-20 border-t border-border">
+      <section className="px-4 sm:px-6 md:px-8 py-14 sm:py-20 border-t border-border">
         <div className="max-w-7xl mx-auto">
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-velocity mb-4">
             Education & Certification
           </p>
-          <h2 className="font-display text-4xl md:text-5xl font-extrabold uppercase tracking-tighter mb-12">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tighter mb-10 sm:mb-12 break-words">
             Foundations of <span className="text-kinetic italic">my craft.</span>
           </h2>
 
@@ -130,14 +130,14 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="px-6 md:px-8 py-16 border-t border-border">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <h3 className="font-display text-3xl md:text-4xl font-extrabold uppercase">
+      <section className="px-4 sm:px-6 md:px-8 py-12 sm:py-16 border-t border-border">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+          <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase break-words">
             Have a project in mind?
           </h3>
           <Link
             to="/contact"
-            className="group inline-flex items-center gap-3 px-7 py-4 bg-velocity text-primary-foreground font-bold uppercase text-xs tracking-widest hover:bg-kinetic hover:text-accent-foreground transition-all"
+            className="group inline-flex items-center gap-3 px-6 sm:px-7 py-3.5 sm:py-4 min-h-12 bg-velocity text-primary-foreground font-bold uppercase text-xs tracking-widest hover:bg-kinetic hover:text-accent-foreground transition-all"
           >
             Get in Touch
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -150,12 +150,12 @@ function AboutPage() {
 
 function PageHeader({ eyebrow, title }: { eyebrow: string; title: string }) {
   return (
-    <section className="px-6 md:px-8 pt-20 md:pt-28 pb-16 border-b border-border">
+    <section className="px-4 sm:px-6 md:px-8 pt-16 sm:pt-20 md:pt-28 pb-12 sm:pb-16 border-b border-border">
       <div className="max-w-7xl mx-auto">
         <p className="font-mono text-xs uppercase tracking-[0.3em] text-velocity mb-6">
           / {eyebrow}
         </p>
-        <h1 className="font-display font-extrabold text-[clamp(3rem,8vw,7rem)] leading-[0.9] tracking-tighter uppercase italic">
+        <h1 className="font-display font-extrabold text-[clamp(2.25rem,8vw,7rem)] leading-[0.9] tracking-tighter uppercase italic break-words">
           {title}
         </h1>
       </div>
