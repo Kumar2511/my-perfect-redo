@@ -37,21 +37,21 @@ function ContactPage() {
 
   return (
     <SiteLayout>
-      <section className="px-6 md:px-8 pt-20 md:pt-28 pb-16 border-b border-border">
+      <section className="px-4 sm:px-6 md:px-8 pt-16 sm:pt-20 md:pt-28 pb-12 sm:pb-16 border-b border-border">
         <div className="max-w-7xl mx-auto">
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-velocity mb-6">
             / Contact
           </p>
-          <h1 className="font-display font-extrabold text-[clamp(3rem,8vw,7rem)] leading-[0.9] tracking-tighter uppercase italic">
+          <h1 className="font-display font-extrabold text-[clamp(2.25rem,8vw,7rem)] leading-[0.9] tracking-tighter uppercase italic break-words">
             Let's work <span className="text-kinetic">together.</span>
           </h1>
         </div>
       </section>
 
-      <section className="px-6 md:px-8 py-20">
-        <div className="max-w-7xl mx-auto grid grid-cols-12 gap-12">
+      <section className="px-4 sm:px-6 md:px-8 py-14 sm:py-20">
+        <div className="max-w-7xl mx-auto grid grid-cols-12 gap-10 lg:gap-12">
           {/* Form */}
-          <form onSubmit={sendWhatsApp} className="col-span-12 lg:col-span-7 space-y-6">
+          <form onSubmit={sendWhatsApp} className="col-span-12 lg:col-span-7 space-y-5 sm:space-y-6">
             <Field
               label="Name"
               value={name}
@@ -75,13 +75,13 @@ function ContactPage() {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="Tell me about your project..."
-                className="w-full bg-surface border border-border px-5 py-4 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-velocity transition-colors resize-none"
+                className="w-full bg-surface border border-border px-4 sm:px-5 py-3.5 sm:py-4 text-base text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-velocity transition-colors resize-none"
               />
             </div>
 
             <button
               type="submit"
-              className="group inline-flex items-center gap-3 px-8 py-4 bg-velocity text-primary-foreground font-bold uppercase text-xs tracking-widest hover:bg-kinetic hover:text-accent-foreground transition-all duration-300"
+              className="group inline-flex items-center gap-3 px-7 sm:px-8 py-3.5 sm:py-4 min-h-12 w-full sm:w-auto justify-center bg-velocity text-primary-foreground font-bold uppercase text-xs tracking-widest hover:bg-kinetic hover:text-accent-foreground transition-all duration-300"
             >
               <Send size={14} />
               Send via WhatsApp
@@ -89,7 +89,7 @@ function ContactPage() {
           </form>
 
           {/* Contact details */}
-          <aside className="col-span-12 lg:col-span-5 lg:border-l border-border lg:pl-12">
+          <aside className="col-span-12 lg:col-span-5 lg:border-l border-border lg:pl-12 pt-6 lg:pt-0 border-t lg:border-t-0">
             <p className="font-mono text-xs uppercase tracking-[0.3em] text-velocity mb-8">
               Get in Touch
             </p>
@@ -134,7 +134,7 @@ function ContactPage() {
               href="https://wa.me/919042551631"
               target="_blank"
               rel="noreferrer"
-              className="mt-12 group flex items-center justify-between gap-4 px-6 py-5 bg-kinetic text-accent-foreground font-bold uppercase text-xs tracking-widest hover:bg-velocity hover:text-primary-foreground transition-all"
+              className="mt-10 sm:mt-12 group flex items-center justify-between gap-4 px-5 sm:px-6 py-4 sm:py-5 min-h-12 bg-kinetic text-accent-foreground font-bold uppercase text-xs tracking-widest hover:bg-velocity hover:text-primary-foreground transition-all"
             >
               <span className="flex items-center gap-3">
                 <MessageCircle size={18} />
@@ -173,7 +173,7 @@ function Field({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className="w-full bg-surface border border-border px-5 py-4 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-velocity transition-colors"
+        className="w-full bg-surface border border-border px-4 sm:px-5 py-3.5 sm:py-4 text-base text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-velocity transition-colors"
       />
     </div>
   );
@@ -195,11 +195,11 @@ function ContactItem({
       <span className="text-velocity mt-1 group-hover:text-kinetic transition-colors">
         {icon}
       </span>
-      <div>
+      <div className="min-w-0">
         <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-1">
           {label}
         </p>
-        <p className="text-foreground font-medium">{value}</p>
+        <p className="text-foreground font-medium break-all">{value}</p>
       </div>
     </div>
   );

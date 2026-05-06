@@ -41,29 +41,29 @@ const jobs = [
 function ExperiencePage() {
   return (
     <SiteLayout>
-      <section className="px-6 md:px-8 pt-20 md:pt-28 pb-16 border-b border-border">
+      <section className="px-4 sm:px-6 md:px-8 pt-16 sm:pt-20 md:pt-28 pb-12 sm:pb-16 border-b border-border">
         <div className="max-w-7xl mx-auto">
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-velocity mb-6">
             / Experience
           </p>
-          <h1 className="font-display font-extrabold text-[clamp(3rem,8vw,7rem)] leading-[0.9] tracking-tighter uppercase italic">
+          <h1 className="font-display font-extrabold text-[clamp(2.25rem,8vw,7rem)] leading-[0.9] tracking-tighter uppercase italic break-words">
             My professional<br />
             journey <span className="text-kinetic">so far.</span>
           </h1>
         </div>
       </section>
 
-      <section className="px-6 md:px-8 py-20">
+      <section className="px-4 sm:px-6 md:px-8 py-14 sm:py-20">
         <div className="max-w-7xl mx-auto">
           <div className="relative">
             {/* timeline line */}
-            <div className="absolute left-0 md:left-[180px] top-0 bottom-0 w-px bg-border" aria-hidden />
+            <div className="absolute left-2 md:left-[180px] top-0 bottom-0 w-px bg-border" aria-hidden />
 
-            <div className="space-y-20">
+            <div className="space-y-14 md:space-y-20">
               {jobs.map((job, idx) => (
-                <article key={job.role} className="relative grid grid-cols-1 md:grid-cols-[180px_1fr] gap-8 md:gap-12 pl-6 md:pl-0">
+                <article key={job.role} className="relative grid grid-cols-1 md:grid-cols-[180px_1fr] gap-6 md:gap-12 pl-8 md:pl-0">
                   {/* dot */}
-                  <span className="absolute left-[-5px] md:left-[174px] top-2 size-3 rounded-full bg-velocity ring-4 ring-background" />
+                  <span className="absolute left-[3px] md:left-[174px] top-2 size-3 rounded-full bg-velocity ring-4 ring-background" />
 
                   <div className="md:text-right md:pr-12">
                     <span
@@ -78,20 +78,20 @@ function ExperiencePage() {
                     <p className="font-mono text-xs text-muted-foreground tracking-widest uppercase">
                       {job.period}
                     </p>
-                    <p className="font-display text-2xl font-bold uppercase mt-3 md:hidden">
+                    <p className="font-display text-xl sm:text-2xl font-bold uppercase mt-3 md:hidden break-words">
                       {job.role}
                     </p>
                   </div>
 
                   <div className="md:pl-12">
-                    <h2 className="hidden md:block font-display text-3xl md:text-4xl font-extrabold uppercase tracking-tight leading-tight">
+                    <h2 className="hidden md:block font-display text-3xl md:text-4xl font-extrabold uppercase tracking-tight leading-tight break-words">
                       {job.role}
                     </h2>
                     <p className="text-velocity font-semibold mt-2">{job.company}</p>
 
-                    <ul className="mt-6 space-y-3">
+                    <ul className="mt-5 sm:mt-6 space-y-3">
                       {job.bullets.map((b, i) => (
-                        <li key={i} className="flex gap-4 text-foreground/85 leading-relaxed">
+                        <li key={i} className="flex gap-3 sm:gap-4 text-sm sm:text-base text-foreground/85 leading-relaxed">
                           <span className="font-mono text-velocity text-xs pt-1.5 shrink-0">
                             ▸
                           </span>
