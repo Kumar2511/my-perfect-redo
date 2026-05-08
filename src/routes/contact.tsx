@@ -37,12 +37,12 @@ function ContactPage() {
 
   return (
     <SiteLayout>
-      <section className="px-4 sm:px-6 md:px-8 pt-16 sm:pt-20 md:pt-28 pb-12 sm:pb-16 border-b border-border">
+      <section className="px-4 sm:px-6 md:px-8 pt-12 sm:pt-20 md:pt-28 pb-10 sm:pb-16 border-b border-border overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-velocity mb-6">
             / Contact
           </p>
-          <h1 className="font-display font-extrabold text-[clamp(2.25rem,8vw,7rem)] leading-[0.9] tracking-tighter uppercase italic break-words">
+          <h1 className="font-display font-extrabold text-[clamp(2rem,7.5vw,7rem)] leading-[0.9] tracking-tighter uppercase italic break-words">
             Let's work <span className="text-kinetic">together.</span>
           </h1>
         </div>

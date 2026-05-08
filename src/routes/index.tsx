@@ -49,11 +49,11 @@ function Index() {
   return (
     <SiteLayout>
       {/* HERO */}
-      <section className="relative px-4 sm:px-6 md:px-8 pt-14 sm:pt-20 md:pt-28 pb-16 sm:pb-20">
+      <section className="relative overflow-hidden px-4 sm:px-6 md:px-8 pt-10 sm:pt-20 md:pt-28 pb-12 sm:pb-20">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-12 gap-8 items-end">
+          <div className="grid grid-cols-12 gap-6 sm:gap-8 items-end">
             <div className="col-span-12 lg:col-span-8 reveal-rise">
-              <div className="inline-flex items-center gap-3 px-3 py-1.5 bg-secondary border border-border mb-8 scanline">
+              <div className="inline-flex items-center gap-3 px-3 py-1.5 bg-secondary border border-border mb-6 sm:mb-8 scanline">
                 <div className="size-2 rounded-full bg-kinetic animate-pulse" />
                 <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-foreground">
                   Available for new projects
@@ -63,7 +63,7 @@ function Index() {
               <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
                 Hello, I'm
               </p>
-              <h1 className="font-display font-extrabold text-[clamp(2.75rem,10vw,8.5rem)] leading-[0.85] tracking-tighter uppercase italic break-words">
+              <h1 className="font-display font-extrabold text-[clamp(2.5rem,9vw,8.5rem)] leading-[0.85] tracking-tighter uppercase italic break-words hyphens-none">
                 Kavi Priya<br />
                 <span className="text-velocity">R.</span>
               </h1>
